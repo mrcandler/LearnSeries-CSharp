@@ -1,3 +1,5 @@
+# Created by: Donta B. Candler
+
 # LearnSeries-CSharp
 
 A small collection of C# learning projects and examples designed to demonstrate core concepts and patterns.
