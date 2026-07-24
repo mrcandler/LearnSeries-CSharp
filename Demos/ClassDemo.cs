@@ -6,44 +6,116 @@ namespace Demos
     {
         static void Main(string[] args)
         {
-            // Student student = new Student();
+            // Demo 1: Class Creation
+            EmptyClass emptyClass = new EmptyClass();
+            Console.WriteLine("Class object created: " + emptyClass.GetType().Name);
+
+            // Demo 2: Class Inheritance
             Student student = new Student();
-            student.firstName = "John";
-            student.lastName = "Doe";
-            Console.WriteLine("First Name: " + student.firstName + " \nLast Name: " + student.lastName + "\n\n***Bang Bang****");
+            Console.WriteLine("Class object created: " + student.GetType().Name);
+
+            // Demo 3: Class Properties
+            Animal Dog = new Animal();
+            Dog.Name = "Rover";
+            Dog.DisplayName();
+            
+            //The End
             Console.ReadLine();
+
+
+        }
+    }
+    
+
+// Demo 1: Class Creation
+    public class EmptyClass
+    {
+        //Empty Class
+    }
+
+
+
+// Demo 2: Class inheritance
+    // Person class is the base class, and Student class is the derived class that inherits from Person.
+    public class Person{
+        private string? _firstName;
+        private string? _lastName;
+
+        public string FirstName
+        {
+            get { return this._firstName; }
+            set { this._firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return this._lastName; }
+            set { this._lastName = value; }
+        }
+    }
+    // student class inherits the properties and methods of the Person class, allowing it to access and use those members.
+    public class Student : Person
+    {
+        // this class demonstrates inheritance, where the Student class inherits
+        // the properties and methods of the Person class, allowing it to access and use those members.
+
+    }
+
+
+// Demo 3: Class properties 
+    public class Animal 
+    {
+        string? _name;
+        public string Name
+        {
+            //properties are used to encapsulate the private field _name and provide controlled access to it.
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        //functionality to return the property value.
+        public void DisplayName()
+        {
+            Console.WriteLine("Animal Name: " + this._name);
         }
     }
 
-// Class - in this case we are creating a template for creating objects
-    public class Person
+
+// Demo 4: Class methods
+    public class Parser 
     {
-        // Properties
-        public string? firstName { get; set; }
-        
-        // added ? to make it nullable = allows the property to be null -> This will be an issue if you are using C# 8.0 or later with nullable reference types enabled. It indicates that the property can hold a null value.
-        public string? lastName{ get; set; }
+        string ? _input;
+        public string Input
+        {
+            get { return this._input; }
+            set { this._input = value; }
+        }
 
-    }
-
-// Class Inheritance - here we are using the (template) Person class as a base class and creating a derived class called Student. The Student class inherits the properties of the Person class, allowing it to access and use those properties.
-    public class Student : Person
-    {
-        // public Student()
-        // {            
-        //     firstName = "John";
-        //     lastName = "Doe";
-        // }
-
-        // public string fName = "John";
-        // public string lName = "Doe";
+        //Method
+        public void ParseInput()
+        {
+            Console.WriteLine("Parsing Input: " + this._input);
+        }
     }
 
 
-// There are a few different ways to populate the properties of a class in C#. Here are some common approaches:
-// 1. Using a Constructor: You can define a constructor in your class that takes parameters and initializes the properties when an object is created. This allows you to set the values of the properties at the time of object creation.       
-// 2. Using Object Initializers: C# provides a convenient syntax called object initializers that allows you to set the properties of an object directly after its creation. This approach is often used when you want to initialize multiple properties at once.    
-// 3. Using Methods: You can create methods within your class that allow you to set the values of the properties. This approach is useful when you want to encapsulate the logic for setting the properties or perform additional validation before assigning values.   
-// 4. Using Property Setters: If your properties have public setters, you can directly assign values to them after creating an object. This approach is straightforward and allows you to modify the properties at any time.    
+// Demo 5: Class constructors
 
-}
+
+
+
+// Demo 6: Class encapsulation
+// Demo 7: Class polymorphism
+// Demo 8: Class abstraction
+// Demo 9: Class interfaces
+// Demo 10: Class access modifiers
+// Demo 11: Class static members
+// Demo 12: Class nested classes
+// Demo 13: Class partial classes
+// Demo 14: Class generics
+// Demo 15: Class events and delegates
+// Demo 16: Class attributes and reflection
+// Demo 17: Class serialization and deserialization
+// Demo 18: Class exception handling
+// Demo 19: Class design patterns
+// Demo 20: Class best practices
